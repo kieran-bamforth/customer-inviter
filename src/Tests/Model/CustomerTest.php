@@ -19,22 +19,22 @@ class CustomerTest extends \PHPUnit_Framework_TestCase
 
         $this->assertEquals(
             $userId,
-            $customer->getUserId();
+            $customer->getUserId()
         );
 
         $this->assertEquals(
             $name,
-            $customer->getName();
+            $customer->getName()
         );
 
         $this->assertEquals(
             $lng,
-            $customer->getLongitude();
+            $customer->getLongitude()
         );
 
         $this->assertEquals(
             $lat,
-            $customer->getLatitude();
+            $customer->getLatitude()
         );
     }
 }
