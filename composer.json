@@ -11,5 +11,8 @@
             "email": "hello@kieranbamforth.me"
         }
     ],
+    "autoload": {
+        "psr-4": { "KieranBamforth\\CustomerInviter\\": "src" }
+    },
     "require": {}
 }
