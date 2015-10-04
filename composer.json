@@ -1,0 +1,15 @@
+{
+    "name": "kieranbamforth/customer-inviter",
+    "require-dev": {
+        "phpunit/phpunit": "~5.0",
+        "mockery/mockery": "0.9.*"
+    },
+    "license": "GNU",
+    "authors": [
+        {
+            "name": "Kieran Bamforth",
+            "email": "hello@kieranbamforth.me"
+        }
+    ],
+    "require": {}
+}
