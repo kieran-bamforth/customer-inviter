@@ -10,6 +10,7 @@ namespace KieranBamforth\CustomerInviter\Model;
  * @package KieranBamforth\CustomerInviter\Model
  */
 class Customer {
+
     private $userId;
     private $name;
     private $longitude;
@@ -26,10 +27,16 @@ class Customer {
     /**
      * @param integer $userId
      *
+     * @throws \InvalidArgumentException
+     *
      * return Customer
      */
     public function setUserId($userId)
     {
+        if (!is_numeric($userId)) {
+            throw new \InvalidArgumentException('Expected $userId to be of type numeric.');
+        }
+
         $this->userId = (int)$userId;
 
         return $this;
@@ -46,10 +53,16 @@ class Customer {
     /**
      * @param string $name
      *
+     * @throws \InvalidArgumentException
+     *
      * return Customer
      */
     public function setName($name)
     {
+        if (!is_string($name)) {
+            throw new \InvalidArgumentException('Expected $name to be of type string.');
+        }
+
         $this->name = $name;
 
         return $this;
@@ -66,10 +79,16 @@ class Customer {
     /**
      * @param float $longitude
      *
+     * @throws \InvalidArgumentException
+     *
      * @return Customer
      */
     public function setLongitude($longitude)
     {
+        if (!is_numeric($longitude)) {
+            throw new \InvalidArgumentException('Expected $longitude to be of type numeric.');
+        }
+
         $this->longitude = (float)$longitude;
 
         return $this;
@@ -86,10 +105,16 @@ class Customer {
     /**
      * @param float $latitude
      *
+     * @throws \InvalidArgumentException
+     *
      * return Customer
      */
     public function setLatitude($latitude)
     {
+        if (!is_numeric($latitude)) {
+            throw new \InvalidArgumentException('Expected $latitude to be of type numeric.');
+        }
+
         $this->latitude = (float)$latitude;
 
         return $this;

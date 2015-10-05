@@ -37,4 +37,36 @@ class CustomerTest extends \PHPUnit_Framework_TestCase
             $customer->getLatitude()
         );
     }
+
+    public function testSetUserIdInvalid()
+    {
+        $this->setExpectedException('\InvalidArgumentException');
+
+        $customer = new Customer();
+        $customer->setUserId('invalid');
+    }
+
+    public function testSetNameInvalid()
+    {
+        $this->setExpectedException('\InvalidArgumentException');
+
+        $customer = new Customer();
+        $customer->setName(1);;
+    }
+
+    public function testSetLatitudeInvalid()
+    {
+        $this->setExpectedException('\InvalidArgumentException');
+
+        $customer = new Customer();
+        $customer->setLatitude('invalid');
+    }
+
+    public function testSetLongitudeInvalid()
+    {
+        $this->setExpectedException('\InvalidArgumentException');
+
+        $customer = new Customer();
+        $customer->setLongitude('invalid');
+    }
 }
