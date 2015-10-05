@@ -25,10 +25,12 @@ $customersWithinDistance = $customerFilter->getCustomersWithinDistance(
     $maxDistanceKm
 );
 
+$customersSorted = $customerFilter->sortCustomersByUserId($customersWithinDistance);
+
 // Output the results to the screen.
 echo '<h1>People to invite</h1>';
 
-foreach ($customersWithinDistance as $customer) {
+foreach ($customersSorted as $customer) {
     echo(sprintf(
         '%s (user id: %s) is within %sKm of Intercom\'s Dublin office.<br/>',
         $customer->getName(),

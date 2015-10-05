@@ -85,4 +85,20 @@ class CustomerFilter
 
         return $distanceInKm <= $maxDistanceInKm;
     }
+
+    /**
+     * Sorts an array of customers by their user ID ascending.
+     *
+     * @param array<Customer> $customers An array of customers to sort
+     *
+     * @return array<Customer>
+     */
+    public function sortCustomersByUserId(array $customers)
+    {
+        usort($customers, function(Customer $customera, Customer $customerb) {
+            return $customera->getUserId() - $customerb->getUserId();
+        });
+
+        return $customers;
+    }
 }
