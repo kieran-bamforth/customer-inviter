@@ -30,7 +30,7 @@ class Customer {
      */
     public function setUserId($userId)
     {
-        $this->userId = $userId;
+        $this->userId = (int)$userId;
 
         return $this;
     }
@@ -70,7 +70,7 @@ class Customer {
      */
     public function setLongitude($longitude)
     {
-        $this->longitude = $longitude;
+        $this->longitude = (float)$longitude;
 
         return $this;
     }
@@ -90,7 +90,7 @@ class Customer {
      */
     public function setLatitude($latitude)
     {
-        $this->latitude = $latitude;
+        $this->latitude = (float)$latitude;
 
         return $this;
     }
