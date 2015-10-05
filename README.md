@@ -33,5 +33,10 @@ This project uses PHPUnit for unit tests. Use the following commands from the pr
 
 ```bash
 $ composer update
-$ ./vendor/bin/phpunit -c phpunit.xml
+$ ./vendor/bin/phpunit -c phpunit.xml --coverage-html docs
+```
+
+You can now view the code coverage by running the following command from the project root
+```bash
+$ open docs/index.html
 ```
