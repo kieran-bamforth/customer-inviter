@@ -6,16 +6,17 @@ use KieranBamforth\CustomerInviter\CustomerProvider\JsonProvider;
 
 class JsonProviderTest extends \PHPUnit_Framework_TestCase
 {
+    private $json;
     private $jsonProvider;
 
     public function setup()
     {
-        $json = file_get_contents(sprintf(
+        $this->json = file_get_contents(sprintf(
             '%s/../../../web/resources/customers.json',
             __DIR__
         ));
 
-        $this->jsonProvider = new JsonProvider($json);
+        $this->jsonProvider = new JsonProvider($this->json);
     }
 
     public function testGetCustomersInvalidJson()
@@ -23,6 +24,20 @@ class JsonProviderTest extends \PHPUnit_Framework_TestCase
         $this->setExpectedException('\UnexpectedValueException');
 
         $jsonProvider = new JsonProvider('invalid json');
+
+        $jsonProvider->getCustomers();
+    }
+
+    public function testGetCustomersInvalidCustomer()
+    {
+        $this->setExpectedException('\DomainException');
+
+        $jsonProvider = \Mockery::mock(
+            '\KieranBamforth\CustomerInviter\CustomerProvider\JsonProvider[isCustomerValid]',
+            [$this->json]
+        );
+
+        $jsonProvider->shouldReceive('isCustomerValid')->andReturn(false);
 
         $jsonProvider->getCustomers();
     }
