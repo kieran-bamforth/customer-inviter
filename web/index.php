@@ -9,7 +9,6 @@ use KieranBamforth\CustomerInviter\CustomerProvider\JsonProvider;
 use KieranBamforth\CustomerInviter\DistanceCalculator\DistanceCalculator;
 
 // Setup the instances variables that will get us the result.
-
 $json = file_get_contents(__DIR__.'/resources/customers.json');
 $jsonProvider = new JsonProvider($json);
 $distanceCalculator = new DistanceCalculator();
@@ -26,6 +25,7 @@ $customersWithinDistance = $customerFilter->getCustomersWithinDistance(
     $maxDistanceKm
 );
 
+// Output the results to the screen.
 echo '<h1>People to invite</h1>';
 
 foreach ($customersWithinDistance as $customer) {
