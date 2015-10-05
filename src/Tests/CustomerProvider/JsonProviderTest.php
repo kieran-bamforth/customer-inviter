@@ -42,6 +42,20 @@ class JsonProviderTest extends \PHPUnit_Framework_TestCase
         $jsonProvider->getCustomers();
     }
 
+    public function testGetCustomers()
+    {
+        $customers = $this->jsonProvider->getCustomers();
+
+        $this->assertCount(32, $customers);
+
+        $firstCustomer = $customers[0];
+
+        $this->assertEquals(12, $firstCustomer->getUserId());
+        $this->assertEquals('Christina McArdle', $firstCustomer->getName());
+        $this->assertEquals('-6.043701', $firstCustomer->getLongitude());
+        $this->assertEquals('52.986375', $firstCustomer->getLatitude());
+    }
+
     /**
      * @dataProvider isCustomerValidDataProvider
      *
