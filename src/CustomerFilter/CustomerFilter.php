@@ -27,11 +27,14 @@ class CustomerFilter
     }
 
     /**
-     * @param $latitudeTo
-     * @param $longitudeTo
-     * @param $maxDistanceInKm
+     * Gets the customers that are within a distance to a given latitude / longitude.
      *
-     * @return array
+     * @param float $latitudeTo      The latitude to check the customers are in distance of.
+     * @param float $longitudeTo     The longitude to check the customers are in distance of.
+     * @param float $maxDistanceInKm The maximum distance before the customers are considered
+     *                               "within distance".
+     *
+     * @return array<Customer>
      */
     public function getCustomersWithinDistance($latitudeTo, $longitudeTo, $maxDistanceInKm)
     {
