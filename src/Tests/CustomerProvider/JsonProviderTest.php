@@ -18,6 +18,15 @@ class JsonProviderTest extends \PHPUnit_Framework_TestCase
         $this->jsonProvider = new JsonProvider($json);
     }
 
+    public function testGetCustomersInvalidJson()
+    {
+        $this->setExpectedException('\UnexpectedValueException');
+
+        $jsonProvider = new JsonProvider('invalid json');
+
+        $jsonProvider->getCustomers();
+    }
+
     /**
      * @dataProvider isCustomerValidDataProvider
      *
