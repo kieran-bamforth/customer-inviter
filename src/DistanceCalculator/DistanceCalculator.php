@@ -2,6 +2,13 @@
 
 namespace KieranBamforth\CustomerInviter\DistanceCalculator;
 
+/**
+ * Class DistanceCalculator
+ *
+ * Provides functions that help to calculate the distance between two points.
+ *
+ * @package KieranBamforth\CustomerInviter\DistanceCalculator
+ */
 class DistanceCalculator
 {
     /**

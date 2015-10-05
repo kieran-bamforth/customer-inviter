@@ -2,6 +2,13 @@
 
 namespace KieranBamforth\CustomerInviter\Model;
 
+/**
+ * Class Customer
+ *
+ * The domain model that Represents a customer in the Customer Inviter system.
+ *
+ * @package KieranBamforth\CustomerInviter\Model
+ */
 class Customer {
     private $userId;
     private $name;
